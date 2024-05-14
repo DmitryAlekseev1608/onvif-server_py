@@ -1,4 +1,4 @@
-<?xml
+    <?xml
         version="1.0"
         encoding="UTF-8"
         ?>
@@ -56,32 +56,44 @@
         <SOAP-ENV:Header>
             </SOAP-ENV:Header>
         <SOAP-ENV:Body>
-            <tds:GetCapabilitiesResponse>
-                <tds:Capabilities>
-                    <tt:Media>
-                        <tt:XAddr>
-                            http://localhost:8080/onvif/media_service
-                            </tt:XAddr>
-                        <tt:StreamingCapabilities>
-                            <tt:RTPMulticast>
-                                false
-                                </tt:RTPMulticast>
-                            <tt:RTP_TCP>
-                                false
-                                </tt:RTP_TCP>
-                            <tt:RTP_RTSP_TCP>
-                                true
-                                </tt:RTP_RTSP_TCP>
-                            </tt:StreamingCapabilities>
-                        <tt:Extension>
-                            <tt:ProfileCapabilities>
-                                <tt:MaximumNumberOfProfiles>
-                                    10
-                                    </tt:MaximumNumberOfProfiles>
-                                </tt:ProfileCapabilities>
-                            </tt:Extension>
-                        </tt:Media>
-                     </tds:Capabilities>
-                </tds:GetCapabilitiesResponse>
+            <tds:GetSystemDateAndTimeResponse>
+                <tds:SystemDateAndTime>
+                    <tt:DateTimeType>
+                        Manual
+                        </tt:DateTimeType>
+                    <tt:DaylightSavings>
+                        false
+                        </tt:DaylightSavings>
+                    <tt:TimeZone>
+                        <tt:TZ>
+                            STWT0STWST,M3.5.0/1,M10.5.0
+                            </tt:TZ>
+                        </tt:TimeZone>
+                    <tt:UTCDateTime>
+                        <tt:Time>
+                            <tt:Hour>
+                                2
+                                </tt:Hour>
+                            <tt:Minute>
+                                7
+                                </tt:Minute>
+                            <tt:Second>
+                                44
+                                </tt:Second>
+                            </tt:Time>
+                        <tt:Date>
+                            <tt:Year>
+                                2024
+                                </tt:Year>
+                            <tt:Month>
+                                3
+                                </tt:Month>
+                            <tt:Day>
+                                7
+                                </tt:Day>
+                            </tt:Date>
+                        </tt:UTCDateTime>
+                    </tds:SystemDateAndTime>
+                </tds:GetSystemDateAndTimeResponse>
             </SOAP-ENV:Body>
         </SOAP-ENV:Envelope>
