@@ -1,48 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <SOAP-ENV:Envelope
     xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
     xmlns:tt="http://www.onvif.org/ver10/schema"
     xmlns:tds="http://www.onvif.org/ver10/device/wsdl">
-    <SOAP-ENV:Header>
-        </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <tds:GetSystemDateAndTimeResponse>
             <tds:SystemDateAndTime>
-                <tt:DateTimeType>
-                    Manual
-                    </tt:DateTimeType>
-                <tt:DaylightSavings>
-                    false
-                    </tt:DaylightSavings>
+                <tt:DateTimeType>NTP</tt:DateTimeType>
+                <tt:DaylightSavings>false</tt:DaylightSavings>
                 <tt:TimeZone>
-                    <tt:TZ>
-                        STWT0STWST,M3.5.0/1,M10.5.0
-                        </tt:TZ>
-                    </tt:TimeZone>
+                    <tt:TZ>CET-1CEST,M3.5.0,M10.5.0</tt:TZ>
+                </tt:TimeZone>
                 <tt:UTCDateTime>
                     <tt:Time>
-                        <tt:Hour>
-                            {past_hour}
-                            </tt:Hour>
-                        <tt:Minute>
-                            {past_minute}
-                            </tt:Minute>
-                        <tt:Second>
-                            {past_second}
-                            </tt:Second>
-                        </tt:Time>
+                        <tt:Hour>{past_hour}</tt:Hour>
+                        <tt:Minute>{past_minute}</tt:Minute>
+                        <tt:Second>{past_second}</tt:Second>
+                    </tt:Time>
                     <tt:Date>
-                        <tt:Year>
-                            {past_year}
-                            </tt:Year>
-                        <tt:Month>
-                            {past_month}
-                            </tt:Month>
-                        <tt:Day>
-                            {past_day}
-                            </tt:Day>
-                        </tt:Date>
-                    </tt:UTCDateTime>
-                </tds:SystemDateAndTime>
-            </tds:GetSystemDateAndTimeResponse>
-        </SOAP-ENV:Body>
-    </SOAP-ENV:Envelope>
+                        <tt:Year>{past_year}</tt:Year>
+                        <tt:Month>{past_month}</tt:Month>
+                        <tt:Day>{past_day}</tt:Day>
+                    </tt:Date>
+                </tt:UTCDateTime>
+            </tds:SystemDateAndTime>
+        </tds:GetSystemDateAndTimeResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
