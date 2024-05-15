@@ -55,7 +55,7 @@
         <trt:GetStreamUriResponse>
             <trt:MediaUri>
                 <tt:Uri>
-                    rtsp://172.16.2.13:554/profile2/media.smp
+                    rtsp://rtsp-test-server.viomic.com:554/stream
                     </tt:Uri>
                 <tt:InvalidAfterConnect>
                     false
