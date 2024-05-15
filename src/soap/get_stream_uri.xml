@@ -52,44 +52,21 @@
     <SOAP-ENV:Header>
         </SOAP-ENV:Header>
     <SOAP-ENV:Body>
-        <tds:GetSystemDateAndTimeResponse>
-            <tds:SystemDateAndTime>
-                <tt:DateTimeType>
-                    Manual
-                    </tt:DateTimeType>
-                <tt:DaylightSavings>
+        <trt:GetStreamUriResponse>
+            <trt:MediaUri>
+                <tt:Uri>
+                    rtsp://172.16.2.13:554/profile2/media.smp
+                    </tt:Uri>
+                <tt:InvalidAfterConnect>
                     false
-                    </tt:DaylightSavings>
-                <tt:TimeZone>
-                    <tt:TZ>
-                        STWT0STWST,M3.5.0/1,M10.5.0
-                        </tt:TZ>
-                    </tt:TimeZone>
-                <tt:UTCDateTime>
-                    <tt:Time>
-                        <tt:Hour>
-                            {past_hour}
-                            </tt:Hour>
-                        <tt:Minute>
-                            {past_minute}
-                            </tt:Minute>
-                        <tt:Second>
-                            {past_second}
-                            </tt:Second>
-                        </tt:Time>
-                    <tt:Date>
-                        <tt:Year>
-                            {past_year}
-                            </tt:Year>
-                        <tt:Month>
-                            {past_month}
-                            </tt:Month>
-                        <tt:Day>
-                            {past_day}
-                            </tt:Day>
-                        </tt:Date>
-                    </tt:UTCDateTime>
-                </tds:SystemDateAndTime>
-            </tds:GetSystemDateAndTimeResponse>
+                    </tt:InvalidAfterConnect>
+                <tt:InvalidAfterReboot>
+                    true
+                    </tt:InvalidAfterReboot>
+                <tt:Timeout>
+                    PT0H0M0S
+                    </tt:Timeout>
+                </trt:MediaUri>
+            </trt:GetStreamUriResponse>
         </SOAP-ENV:Body>
     </SOAP-ENV:Envelope>
