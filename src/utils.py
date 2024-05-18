@@ -1,10 +1,11 @@
-from lxml import etree
+from bs4 import BeautifulSoup
 import datetime
 
 def parsing_xml(xml_bytes):
     xml_string = xml_bytes.decode("utf-8")
-    root = etree.fromstring(xml_string)
-    return root
+    soup = BeautifulSoup(xml_string, 'xml')
+    tag_for_det_act = soup.find('s:Body').find_next().name
+    return soup, tag_for_det_act
 
 def create_content_xml(path):
     with open(path) as file:

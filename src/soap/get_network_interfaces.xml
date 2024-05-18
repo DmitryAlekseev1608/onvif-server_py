@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope
+    xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:tt="http://www.onvif.org/ver10/schema"
+    xmlns:tds="http://www.onvif.org/ver10/device/wsdl">
+    <soapenv:Body>
+        <tds:GetNetworkInterfacesResponse>
+            <tds:NetworkInterfaces token="wlo1">
+                <tt:Enabled>true</tt:Enabled>
+                <tt:Info>
+                    <tt:Name>wlo1</tt:Name>
+                    <tt:HwAddress>02:01:23:45:67:89</tt:HwAddress>
+                    <tt:MTU>1500</tt:MTU>
+                </tt:Info>
+                <tt:IPv4>
+                    <tt:Enabled>true</tt:Enabled>
+                    <tt:Config>
+                        <tt:Manual>
+                            <tt:Address>192.168.0.144</tt:Address>
+                            <tt:PrefixLength>24</tt:PrefixLength>
+                        </tt:Manual>
+                        <tt:DHCP>false</tt:DHCP>
+                    </tt:Config>
+                </tt:IPv4>
+            </tds:NetworkInterfaces>
+        </tds:GetNetworkInterfacesResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
