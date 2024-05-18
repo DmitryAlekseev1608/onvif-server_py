@@ -1,4 +1,5 @@
 fastapi
 uvicorn
 colorama
-beautifulsoup4 
+beautifulsoup4
+hydra-core

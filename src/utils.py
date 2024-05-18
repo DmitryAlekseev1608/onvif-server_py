@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 import datetime
+from configs.configs import MEDIA_TYPE, HEADERS, PATH_TAG
+from colorama import Fore, Style
+import logging
+from fastapi import Response
 
 def parsing_xml(xml_bytes):
     xml_string = xml_bytes.decode("utf-8")
@@ -7,21 +11,162 @@ def parsing_xml(xml_bytes):
     tag_for_det_act = soup.find('s:Body').find_next().name
     return soup, tag_for_det_act
 
-def create_content_xml(path):
-    with open(path) as file:
+def create_response(tag_for_det_act):
+    with open(PATH_TAG[tag_for_det_act]) as file:
         xml_response = file.read()
-    return xml_response
+    match tag_for_det_act:
+        case 'GetSystemDateAndTime':
+            current_time = datetime.datetime.now()
+            content = xml_response.format(past_hour=current_time.hour,
+                                    past_minute=current_time.minute,
+                                    past_second= current_time.second,
+                                    past_year=current_time.year,
+                                    past_month=current_time.month,
+                                    past_day=current_time.day)
+            status_code = 200
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetCapabilities':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetDeviceInformation':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetScopes':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetServices':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetNetworkInterfaces':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetDNS':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetProfiles':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetStreamUri':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetSnapshotUri':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
 
-def create_get_system_date_and_time():
-    with open("src/soap/get_system_date_and_time.xml", "r") as file:
-        xml_response = file.read()
-    current_time = datetime.datetime.now()
-    xml_response = xml_response.format(past_hour=current_time.hour,
-                                       past_minute=current_time.minute,
-                                       past_second= current_time.second,
-                                       past_year=current_time.year,
-                                       past_month=current_time.month,
-                                       past_day=current_time.day)
-    return xml_response
+        case 'GetVideoSources':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetVideoSourceConfigurations':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetAudioSourceConfigurations':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
+        
+        case 'GetProfile':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
 
-
+        case 'GetVideoSourceConfiguration':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            return response
