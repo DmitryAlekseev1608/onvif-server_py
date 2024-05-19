@@ -1,0 +1,7 @@
+VideoSource:
+  profiles: ['Profile1']
+  uri: 'rtsp://192.168.0.144:8554/cam_003'
+
+VideoSource1:
+  profiles: ['Profile2']
+  uri: 'rtsp://192.168.0.144:8554/cam_004'  

@@ -12,3 +12,4 @@ HEADERS = {'Server': 'gSOAP/2.8E',
         'Strict-Transport-Security': 'max-age=63072000; includeSubdomains;',
         'Date': datetime.datetime.utcnow().isoformat("T") + "Z"}
 PATH_TAG = compose(config_name="path_tag")
+VIDEO_SOURCE = compose(config_name="video_source")

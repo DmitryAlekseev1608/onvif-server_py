@@ -51,16 +51,16 @@
         </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <trt:GetProfileResponse>
-            <trt:Profile fixed="true" token="Profile1">
-                <tt:Name>Profile1</tt:Name>
+            <trt:Profile fixed="true" token="{profile}">
+                <tt:Name>{profile}</tt:Name>
                 <tt:VideoSourceConfiguration token="video_source_config">
-                    <tt:Name>VideoSource</tt:Name>
+                    <tt:Name>{video_source}</tt:Name>
                     <tt:UseCount>5</tt:UseCount>
-                    <tt:SourceToken>VideoSource</tt:SourceToken>
+                    <tt:SourceToken>{video_source}</tt:SourceToken>
                     <tt:Bounds height="720" width="1280" y="1" x="1"></tt:Bounds>
                     </tt:VideoSourceConfiguration>
-                <tt:VideoEncoderConfiguration token="video_encoder_config1">
-                    <tt:Name>video_encoder_config1</tt:Name>
+                <tt:VideoEncoderConfiguration token="video_encoder_config">
+                    <tt:Name>video_encoder_config</tt:Name>
                     <tt:UseCount>1</tt:UseCount>
                     <tt:Encoding>H264</tt:Encoding>
                     <tt:Resolution>
@@ -77,15 +77,6 @@
                             <tt:GovLength>30</tt:GovLength>
                             <tt:H264Profile>Baseline</tt:H264Profile>
                         </tt:H264>
-                        <tt:Multicast>
-                            <tt:Address>
-                                <tt:Type>IPv4</tt:Type>
-                                <tt:IPv4Address>0.0.0.0</tt:IPv4Address>
-                            </tt:Address>
-                            <tt:Port>0</tt:Port>
-                            <tt:TTL>3</tt:TTL>
-                            <tt:AutoStart>false</tt:AutoStart>
-                        </tt:Multicast>
                         <tt:SessionTimeout>PT0S</tt:SessionTimeout>
                     </tt:VideoEncoderConfiguration>
                 </trt:Profile>

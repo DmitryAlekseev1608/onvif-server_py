@@ -51,6 +51,47 @@
           </tt:Imaging>
         </tt:Extension>
       </trt:VideoSources>
+            <trt:VideoSources token="VideoSource1">
+        <tt:Framerate>30.000000</tt:Framerate>
+        <tt:Resolution>
+          <tt:Width>800</tt:Width>
+          <tt:Height>600</tt:Height>
+        </tt:Resolution>
+        <tt:Imaging>
+          <tt:Brightness>90.000000</tt:Brightness>
+          <tt:ColorSaturation>128.000000</tt:ColorSaturation>
+          <tt:Contrast>128.000000</tt:Contrast>
+          <tt:IrCutFilter>ON</tt:IrCutFilter>
+          <tt:Sharpness>16.000000</tt:Sharpness>
+          <tt:WideDynamicRange>
+            <tt:Mode>OFF</tt:Mode>
+            <tt:Level>0.000000</tt:Level>
+          </tt:WideDynamicRange>
+          <tt:WhiteBalance>
+            <tt:Mode>AUTO</tt:Mode>
+            <tt:CrGain>128.000000</tt:CrGain>
+            <tt:CbGain>128.000000</tt:CbGain>
+          </tt:WhiteBalance>
+        </tt:Imaging>
+        <tt:Extension>
+          <tt:Imaging>
+            <tt:Brightness>90.000000</tt:Brightness>
+            <tt:ColorSaturation>128.000000</tt:ColorSaturation>
+            <tt:Contrast>128.000000</tt:Contrast>
+            <tt:IrCutFilter>ON</tt:IrCutFilter>
+            <tt:Sharpness>16.000000</tt:Sharpness>
+            <tt:WideDynamicRange>
+              <tt:Mode>OFF</tt:Mode>
+              <tt:Level>0.000000</tt:Level>
+            </tt:WideDynamicRange>
+            <tt:WhiteBalance>
+              <tt:Mode>AUTO</tt:Mode>
+              <tt:CrGain>128.000000</tt:CrGain>
+              <tt:CbGain>128.000000</tt:CbGain>
+            </tt:WhiteBalance>
+          </tt:Imaging>
+        </tt:Extension>
+      </trt:VideoSources>
     </GetVideoSourcesResponse>
   </env:Body>
 </env:Envelope>
