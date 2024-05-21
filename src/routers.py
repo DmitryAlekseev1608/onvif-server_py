@@ -3,7 +3,9 @@ import logging
 from colorama import Fore, Style
 from fastapi.responses import FileResponse
 
-from utils import parsing_xml, create_response
+import device_service
+import media_service
+from request import parsing_xml
 
 router = APIRouter()
 
@@ -16,7 +18,7 @@ async def post_device_service(request: Request):
     logging.info(Fore.BLUE + ' routers | post_device_service | headers: %s \n '  % (request.headers) + Style.RESET_ALL)  
     logging.info(Fore.BLUE + ' routers | post_device_service | content: %s \n '  % (soup_request) + Style.RESET_ALL)
 
-    response = create_response(tag_for_det_act, soup_request)
+    response = device_service.create_response(tag_for_det_act, soup_request)
     return response
 
 @router.post("/onvif/media_service", tags=["media_service"])
@@ -28,7 +30,7 @@ async def post_media_service(request: Request):
     logging.info(Fore.BLUE + ' routers | post_media_service | headers: %s \n '  % (request.headers) + Style.RESET_ALL)  
     logging.info(Fore.BLUE + ' routers | post_media_service | content: %s \n '  % (soup_request) + Style.RESET_ALL)
 
-    response = create_response(tag_for_det_act, soup_request)
+    response = media_service.create_response(tag_for_det_act, soup_request)
     return response
 
 @router.get("/", tags=["snapshot"])

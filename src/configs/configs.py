@@ -13,3 +13,4 @@ HEADERS = {'Server': 'gSOAP/2.8E',
         'Date': datetime.datetime.utcnow().isoformat("T") + "Z"}
 PATH_TAG = compose(config_name="path_tag")
 VIDEO_SOURCE = compose(config_name="video_source")
+COMMON = compose(config_name="common")

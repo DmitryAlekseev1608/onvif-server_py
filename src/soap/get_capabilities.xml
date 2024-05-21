@@ -7,7 +7,7 @@
         <tds:GetCapabilitiesResponse>
             <tds:Capabilities>
                 <tt:Media>
-                    <tt:XAddr>http://192.168.0.144:8080/onvif/media_service</tt:XAddr>
+                    <tt:XAddr>http://{ip_server}:8080/onvif/media_service</tt:XAddr>
                     <tt:StreamingCapabilities>
                         <tt:RTPMulticast>false</tt:RTPMulticast>
                         <tt:RTP_TCP>false</tt:RTP_TCP>

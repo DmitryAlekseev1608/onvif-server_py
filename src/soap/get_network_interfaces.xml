@@ -16,7 +16,7 @@
                     <tt:Enabled>true</tt:Enabled>
                     <tt:Config>
                         <tt:Manual>
-                            <tt:Address>192.168.0.144</tt:Address>
+                            <tt:Address>{ip_server}</tt:Address>
                             <tt:PrefixLength>24</tt:PrefixLength>
                         </tt:Manual>
                         <tt:DHCP>false</tt:DHCP>
