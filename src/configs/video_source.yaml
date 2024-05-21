@@ -1,7 +1,10 @@
+# home 192.168.0.144
+# office 192.168.56.1
+
 VideoSource:
   profiles: ['Profile1']
-  uri: 'rtsp://192.168.56.1:8554/cam_003'
+  uri: 'rtsp://192.168.0.144:8554/cam_003'
 
 VideoSource1:
   profiles: ['Profile2']
-  uri: 'rtsp://192.168.56.1:8554/cam_004'
+  uri: 'rtsp://192.168.0.144:8554/cam_004'

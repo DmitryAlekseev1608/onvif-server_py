@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:wsa5="http://www.w3.org/2005/08/addressing"
+    xmlns:tev="http://www.onvif.org/ver10/events/wsdl">
+    <SOAP-ENV:Header>
+        <wsa5:Action SOAP-ENV:mustUnderstand="true">http://docs.oasis-open.org/wsn/bw2/NotificationProducer/PullMessagesResponse</wsa5:Action>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <tev:PullMessagesResponse>
+            <tev:CurrentTime>2010-10-29T15:52:41Z</tev:CurrentTime>
+            <tev:TerminationTime>2010-10-29T15:53:30Z</tev:TerminationTime>
+        </tev:PullMessagesResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>a

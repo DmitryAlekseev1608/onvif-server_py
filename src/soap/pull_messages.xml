@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:wsa5="http://www.w3.org/2005/08/addressing"
+    xmlns:tt="http://www.onvif.org/ver10/schema"
+    xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2"
+    xmlns:tev="http://www.onvif.org/ver10/events/wsdl"
+    xmlns:tns1="http://www.onvif.org/ver10/topics"
+    xmlns:tnsvendor="http://www.vendor.com/2009/event/topics">
+    <SOAP-ENV:Header>
+        <wsa5:Action SOAP-ENV:mustUnderstand="true">http://www.onvif.org/ver10/events/wsdl/PullPointSubscription/PullMessagesResponse</wsa5:Action>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <tev:PullMessagesResponse>
+            <tev:CurrentTime>{current_time}</tev:CurrentTime>
+            <tev:TerminationTime>{termination_time}</tev:TerminationTime>
+            <wsnt:NotificationMessage>
+                <wsnt:Topic Dialect="http://docs.oasis-open.org/wsn/t1/TopicExpression/Simple">"Обнаружен человек"</wsnt:Topic>
+                <wsnt:ProducerReference>
+                    <wsa5:Address>uri://a1f48ac2-dc8b-11df-b255-00408c1836b2/ProducerReference</wsa5:Address>
+                </wsnt:ProducerReference>
+                <wsnt:Message>
+                    <tt:Message UtcTime="{current_time}" PropertyOperation="Initialized">
+                        <tt:Source>
+                            <tt:SimpleItem Name="camera" Value="cam_001"></tt:SimpleItem>
+                        </tt:Source>
+                        <tt:Key/>
+                        <tt:Data>
+                            <tt:SimpleItem Name="state" Value="0"></tt:SimpleItem>
+                        </tt:Data>
+                    </tt:Message>
+                </wsnt:Message>
+            </wsnt:NotificationMessage>
+        </tev:PullMessagesResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

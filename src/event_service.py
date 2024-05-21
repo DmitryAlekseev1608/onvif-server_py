@@ -36,10 +36,12 @@ def create_response(tag_for_det_act, soup_request):
         case 'CreatePullPointSubscription':
             status_code = 200
             current_time = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+            subscription_id = 0
             termination_time = (datetime.datetime.now() + datetime.timedelta(minutes=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
             content = xml_response.format(ip_server=COMMON.ip_server,
                                     current_time=current_time,
-                                    termination_time= termination_time)
+                                    subscription_id=subscription_id,
+                                    termination_time=termination_time)
             response = Response(media_type = MEDIA_TYPE, 
                             status_code = status_code, 
                             content = content,
