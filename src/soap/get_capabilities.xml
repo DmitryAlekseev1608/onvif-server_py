@@ -6,6 +6,20 @@
     <SOAP-ENV:Body>
         <tds:GetCapabilitiesResponse>
             <tds:Capabilities>
+                <tt:Events>
+                    <tt:XAddr>
+                        http://{ip_server}:8080/onvif/event_service
+                        </tt:XAddr>
+                    <tt:WSSubscriptionPolicySupport>
+                        false
+                        </tt:WSSubscriptionPolicySupport>
+                    <tt:WSPullPointSupport>
+                        true
+                        </tt:WSPullPointSupport>
+                    <tt:WSPausableSubscriptionManagerInterfaceSupport>
+                        false
+                        </tt:WSPausableSubscriptionManagerInterfaceSupport>
+                </tt:Events>
                 <tt:Media>
                     <tt:XAddr>http://{ip_server}:8080/onvif/media_service</tt:XAddr>
                     <tt:StreamingCapabilities>
@@ -15,7 +29,7 @@
                     </tt:StreamingCapabilities>
                     <tt:Extension>
                         <tt:ProfileCapabilities>
-                            <tt:MaximumNumberOfProfiles>10</tt:MaximumNumberOfProfiles>
+                            <tt:MaximumNumberOfProfiles>4</tt:MaximumNumberOfProfiles>
                         </tt:ProfileCapabilities>
                     </tt:Extension>
                 </tt:Media>

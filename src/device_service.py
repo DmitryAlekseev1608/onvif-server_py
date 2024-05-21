@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 import datetime
 from configs.configs import MEDIA_TYPE, HEADERS, PATH_TAG, VIDEO_SOURCE, COMMON
 from colorama import Fore, Style
@@ -22,7 +21,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetCapabilities':
@@ -32,7 +31,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetDeviceInformation':
@@ -42,7 +41,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetScopes':
@@ -52,7 +51,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetServices':
@@ -62,7 +61,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetNetworkInterfaces':
@@ -72,7 +71,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetDNS':
@@ -82,5 +81,5 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' device_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response

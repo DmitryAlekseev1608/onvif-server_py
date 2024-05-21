@@ -6,6 +6,7 @@ from fastapi import Response
 def create_response(tag_for_det_act, soup_request):
     with open(PATH_TAG[tag_for_det_act]) as file:
         xml_response = file.read()
+
     match tag_for_det_act:
         case 'GetProfiles':
             status_code = 200
@@ -14,7 +15,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetStreamUri':
@@ -28,7 +29,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetSnapshotUri':
@@ -38,7 +39,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
 
         case 'GetVideoSources':
@@ -48,7 +49,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetVideoSourceConfigurations':
@@ -58,7 +59,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetAudioSourceConfigurations':
@@ -68,7 +69,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
         
         case 'GetProfile':
@@ -83,7 +84,7 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response
 
         case 'GetVideoSourceConfiguration':
@@ -93,5 +94,35 @@ def create_response(tag_for_det_act, soup_request):
                             status_code = status_code, 
                             content = content,
                             headers = HEADERS)
-            logging.info(Fore.RED + ' utils | create_response | response: %s \n '  % (content) + Style.RESET_ALL)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
+            return response
+        
+        case 'GetMetadataConfigurationOptions':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
+            return response
+        
+        case 'GetMetadataConfiguration':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
+            return response
+        
+        case 'GetAudioSources':
+            status_code = 200
+            content = xml_response
+            response = Response(media_type = MEDIA_TYPE, 
+                            status_code = status_code, 
+                            content = content,
+                            headers = HEADERS)
+            logging.info(Fore.RED + ' media_service | create_response | response: %s \n '  % (content.replace('\n', '').replace(' ', '')) + Style.RESET_ALL)
             return response

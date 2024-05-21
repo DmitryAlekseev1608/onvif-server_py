@@ -34,6 +34,12 @@
                     </tt:H264>
                     <tt:SessionTimeout>PT0S</tt:SessionTimeout>
                 </tt:VideoEncoderConfiguration>
+                <tt:MetadataConfiguration token="0">
+                    <tt:Name>metadata</tt:Name>
+                    <tt:UseCount>1</tt:UseCount>
+                    <tt:Analytics>true</tt:Analytics>
+                    <tt:SessionTimeout>PT60S</tt:SessionTimeout>
+                </tt:MetadataConfiguration>
             </trt:Profiles>
             <trt:Profiles fixed="true" token="Profile2">
                 <tt:Name>Profile2</tt:Name>
@@ -63,6 +69,12 @@
                     </tt:H264>
                     <tt:SessionTimeout>PT0S</tt:SessionTimeout>
                 </tt:VideoEncoderConfiguration>
+                <tt:MetadataConfiguration token="0">
+                    <tt:Name>metadata</tt:Name>
+                    <tt:UseCount>1</tt:UseCount>
+                    <tt:Analytics>true</tt:Analytics>
+                    <tt:SessionTimeout>PT60S</tt:SessionTimeout>
+                </tt:MetadataConfiguration>
             </trt:Profiles>
         </trt:GetProfilesResponse>
     </SOAP-ENV:Body>
